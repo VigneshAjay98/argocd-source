@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-html
+  labels:
+    app: simple-html
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: simple-html
+  template:
+    metadata:
+      labels:
+        app: simple-html
+    spec:
+      containers:
+      - name: simple-html
+        image: vigneshajay98/simple-html
+        ports:
+        - containerPort: 80
+          name: simple-html-port
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-html
+spec:
+  type: LoadBalancer
+  selector:
+    app: simple-html
+  ports:
+  - name: simple-html-port
+    protocol: TCP 
+    port: 5003
+    targetPort: simple-html-port

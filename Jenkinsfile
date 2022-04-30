@@ -19,7 +19,7 @@ node {
                         sh "cat simple-html.yml"
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
-                        sh "git push https://github.com/VigneshAjay98/argocd-source.git deploy"
+                        sh "git push https://github.com/VigneshAjay98/argocd-source.git HEAD:deploy"
                     }
                 }
             }

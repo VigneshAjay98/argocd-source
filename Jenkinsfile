@@ -9,7 +9,7 @@ node {
             script {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                    // withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-                    withCredentials(([string(credentialsId: 'git-personal	', variable: 'SECRET')]) {
+                    withCredentials([string(credentialsId: 'git-personal', variable: 'SECRET')]) {
                         //def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
                         sh "git config user.email vigneshajay.va@gmail.com"
                         sh "git config user.name VigneshAjay98"

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: simple-html
-        image: vigneshajay98/simple-html
+        image: vigneshajay98/simple-html:14
         ports:
         - containerPort: 80
           name: simple-html-port

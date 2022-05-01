@@ -34,4 +34,4 @@ spec:
   - name: simple-html-port
     protocol: TCP 
     port: 5003
-    targetPort: simple-html-port
+    targetPort: 80
